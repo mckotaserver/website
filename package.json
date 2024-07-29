@@ -10,8 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.5.18",
     "@astrojs/check": "^0.5.10",
+    "astro": "^4.5.18",
+    "destyle.css": "^4.0.1",
     "typescript": "^5.4.5"
   },
   "volta": {
