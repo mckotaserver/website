@@ -1,10 +1,53 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
+import heroImage from "../assets/hero.svg";
 ---
 
 <Layout>
-	<main>
-		<h1>KotaServer</h1>
-		<p>もふもふワールド</p>
-	</main>
+  <p class="hero-text">
+    まったりあそべる、<br /><span>Minecraft</span> サーバー。
+  </p>
+  <div class="imageWrapper">
+    <img src={heroImage.src} />
+  </div>
+  <!-- <div class="hero">
+    <div class="hero-image-wrapper">
+      <img src={heroImage.src} height="320" />
+    </div>
+  </div> -->
 </Layout>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-text {
+    color: #374151;
+    /* font-size: 3.6rem; */
+    font-size: 2.8rem;
+    margin-block-start: 8rem;
+    margin-inline-start: 4rem;
+    /* text-align: center; */
+    font-weight: 900;
+    line-height: 1.6;
+  }
+
+  .hero-text span {
+    color: #7dae24;
+  }
+
+  .imageWrapper {
+    overflow-x: hidden;
+  }
+
+  img {
+    display: block;
+    width: 90%;
+    margin-inline-start: auto;
+    margin-block-start: 6rem;
+    transform: translateX(0rem);
+  }
+</style>
