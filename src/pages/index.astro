@@ -4,11 +4,15 @@ import heroImage from "../assets/hero.svg";
 ---
 
 <Layout>
-  <p class="hero-text">
-    まったりあそべる、<br /><span>Minecraft</span> サーバー。
-  </p>
-  <div class="imageWrapper">
-    <img src={heroImage.src} />
+  <div class="container">
+    <div class="hero">
+      <p class="hero-text">
+        まったりあそべる、<br /><span>Minecraft</span> サーバー。
+      </p>
+      <div class="imageWrapper">
+        <img src={heroImage.src} />
+      </div>
+    </div>
   </div>
   <!-- <div class="hero">
     <div class="hero-image-wrapper">
@@ -20,16 +24,15 @@ import heroImage from "../assets/hero.svg";
 <style>
   .hero {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
 
   .hero-text {
     color: #374151;
     /* font-size: 3.6rem; */
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     margin-block-start: 8rem;
-    margin-inline-start: 4rem;
+    margin-inline-start: 3rem;
     /* text-align: center; */
     font-weight: 900;
     line-height: 1.6;
@@ -45,9 +48,39 @@ import heroImage from "../assets/hero.svg";
 
   img {
     display: block;
-    width: 90%;
+    width: 120%;
     margin-inline-start: auto;
     margin-block-start: 6rem;
-    transform: translateX(0rem);
+    transform: translateX(2rem);
+  }
+
+  .container {
+    max-inline-size: 90rem;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 360px) {
+    .hero-text {
+      margin-inline-start: 4rem;
+    }
+  }
+
+  @media (min-width: 520px) {
+    img {
+      width: 90%;
+      transform: translateX(4rem);
+    }
+  }
+
+  @media (min-width: 660px) {
+    .hero {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 56vw;
+      transform: translateX(0);
+    }
   }
 </style>
