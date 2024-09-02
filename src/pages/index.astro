@@ -7,7 +7,8 @@ import heroImage from "../assets/hero.svg";
   <div class="container">
     <div class="hero">
       <p class="hero-text">
-        まったりあそべる、<br /><span>Minecraft</span> サーバー。
+        <span class="hero-text-inner">まったりあそべる、<br /><span>Minecraft</span> サーバー。</span>
+        <a class="hero-button">はじめる</a>
       </p>
       <div class="imageWrapper">
         <img src={heroImage.src} />
@@ -28,6 +29,9 @@ import heroImage from "../assets/hero.svg";
   }
 
   .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     color: #374151;
     /* font-size: 3.6rem; */
     font-size: 2.6rem;
@@ -38,7 +42,7 @@ import heroImage from "../assets/hero.svg";
     line-height: 1.6;
   }
 
-  .hero-text span {
+  .hero-text-inner span {
     color: #7dae24;
   }
 
@@ -46,9 +50,20 @@ import heroImage from "../assets/hero.svg";
     overflow-x: hidden;
   }
 
+  .hero-button {
+    display: inline-block;
+    background-color: #FFCA42;
+    color: #374151;
+    font-size: 1.8rem;
+    border-radius: 999px;
+    padding: 0.6em 2em;
+    margin-block-start: 3rem;
+  }
+
   img {
     display: block;
     width: 120%;
+    max-width: 56rem;
     margin-inline-start: auto;
     margin-block-start: 6rem;
     transform: translateX(2rem);
@@ -73,14 +88,41 @@ import heroImage from "../assets/hero.svg";
   }
 
   @media (min-width: 660px) {
+    .container {
+      transform: translateX(1rem);
+    }
+
     .hero {
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+      min-block-size: min(calc(100vh - 68px), 360px);
+    }
+
+    .hero-text {
+      flex: 1;
+      margin-inline-start: 2rem;
+      margin-block-start: 4rem;
+      margin-block-end: 12rem;
+      font-size: 2.8rem;
+    }
+
+    .imageWrapper {
+      flex-basis: calc(min(100vw, 90rem) - 36rem + 9vw);
+      margin-inline-start: -9vw;
     }
 
     img {
-      width: 56vw;
-      transform: translateX(0);
+      width: 50rem;
+      margin-inline-end: -3.2rem;
+      margin-block-start: 1rem;
+      transform: translate(0);
+    }
+  }
+
+  @media (min-width: 800px) {
+    .hero-text {
+      margin-inline-start: 4rem;
     }
   }
 </style>
