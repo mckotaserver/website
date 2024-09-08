@@ -1,5 +1,5 @@
 ---
-import logo from '../assets/logo.svg'
+import logo from '../assets/logo-outlined.svg'
 import "destyle.css";
 
 interface Props {
@@ -26,24 +26,7 @@ const { title } = Astro.props;
 		<title>{title ? `${title} | KotaServer` : "KotaServer"}</title>
 	</head>
 	<body>
-		<header>
-			<img class="logo" src={logo.src} />
-			<div class="drawerButton">
-				<span />
-				<span />
-			</div>
-		</header>
-
 		<slot />
-		<!-- <header class="header">
-			<img class="logo" src={logo.src} />
-		</header>
-
-		<div class="container">
-			<main class="main">
-				<slot />
-			</main>
-		</div> -->
 	</body>
 </html>
 
@@ -53,10 +36,12 @@ const { title } = Astro.props;
 	}
 
 	body {
+	  color: #334155;
 		font-family: "M PLUS 2", sans-serif;
 		font-size: 1.6rem;
+		font-weight: 600;
 		line-height: 1.8;
-		background-color: #fffaf2;
+		background-color: #fcd34d;
 	}
 
 	.header {

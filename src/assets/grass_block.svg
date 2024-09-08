@@ -1,0 +1,36 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 540">
+	<defs>
+    <filter id="polycleaner" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .5 1 1"/>
+      </feComponentTransfer>
+    </filter>
+		<symbol id="side">
+			<rect width="160" height="130" x="0" y="30" fill="#af713b"/>
+			<rect width="160" height="30" x="0" y="0" fill="#90bc3c"/>
+		</symbol>
+		<symbol id="top">
+			<rect width="160" height="160" x="0" y="0" fill="#90bc3c"/>
+		</symbol>
+		<clipPath id="top-lower-clip" clipPathUnits="userSpaceOnUse">
+			<path d="m160 0v160h-160z"/>
+		</clipPath>
+		<clipPath id="top-upper-clip" clipPathUnits="userSpaceOnUse">
+			<path d="m0 0h160l-160 160z"/>
+		</clipPath>
+		<linearGradient id="shadow" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+			<stop stop-opacity=".09" offset="0"/>
+			<stop stop-opacity="0" offset="1"/>
+		</linearGradient>
+	</defs>
+  <g transform="translate(50,50)">
+    <g filter="url(#polycleaner)">
+      <path d="m400 346.41-200 91.899-200-91.899v-280.226l200-66.184 200 66.184z" fill="none" stroke="#ffffff" stroke-width="90" stroke-linejoin="round"/>
+      <use href="#top" clip-path="url(#top-lower-clip)" width="100%" height="100%" x="0" y="0" transform="matrix(1.25 .573535 -1.25 .573535 200 -25.7932)"/>
+      <use href="#top" clip-path="url(#top-upper-clip)" width="100%" height="100%" x="0" y="0" transform="matrix(1.25 .411954 -1.25 .411954 200 .059758)"/>
+      <use href="#side" width="100%" height="100%" x="0" y="0" transform="matrix(1.25 .569658 0 1.76786 0 64.9806)"/>
+      <use href="#side" width="100%" height="100%" x="0" y="0" transform="matrix(1.25 -.569658 0 1.76786 200 156.126)"/>
+    </g>
+    <rect width="160" height="160" x="0" y="0" transform="matrix(1.25 -.569658 0 1.76786 200 156.126)" fill="url(#shadow)"/>
+  </g>
+</svg>
