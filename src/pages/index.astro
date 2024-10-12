@@ -1,101 +1,28 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import grassBlock from "../assets/grass_block.svg";
-import logo from "../assets/logo-outlined.svg";
-import moku from "../assets/moku.svg";
+import logo from "../assets/logo.svg";
 ---
 
 <Layout>
-  <div class="container">
-    <img class="moku" src={moku.src} />
-    <div class="logo-wrapper">
-      <img class="logo" src={logo.src} />
-      <p class="copy-text">まったりあそべる、Minecraftサーバー。</p>
-    </div>
-    <div class="foo">
-      <img class="grass-block" src={grassBlock.src} width="62.5" height="67.5" />
-      <p>スクロール！</p>
-      <svg fill="none" viewBox="0 0 24 24" stroke-width="2.4" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-      </svg>
-    </div>
-  </div>
+  <header>
+    <img src={logo.src} class="logo" />
+    <div class="search-bar" />
+  </header>
 </Layout>
 
 <style>
-  .container {
-    position: relative;
-    block-size: 100svh;
-  }
-
-  .moku {
-    position: absolute;
-    block-size: 86%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .logo-wrapper {
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    transform: translateX(-50%);
-  }
-
-  .logo {
-    width: 640px;
-    margin-block-end: 0.75rem;
-  }
-
-  .copy-text {
-    font-size: 2.2rem;
-    font-weight: 800;
-    text-align: center;
-  }
-
-  .foo {
+  header {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: flex-end;
+    padding: .4rem .8rem;
+    border-bottom: 1px solid #eaeaea;
   }
 
-  .foo > p {
-    margin-block-end: 0.5em;
-    font-size: 1.4rem;
-    font-weight: 800;
-  }
-
-  .foo > svg {
-    inline-size: 1.4em;
-    block-size: 1.4em;
-  }
-
-  .grass-block {
-    animation: bounce 1s infinite;
-  }
-
-  @keyframes flip {
-    0%, 100% {
-      transform: rotateY(0);
-    }
-    50% {
-      transform: rotateY(180deg);
-    }
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+  .search-bar {
+    inline-size: 24rem;
+    block-size: 2em;
+    margin-block-end: .4rem;
+    background-color: #f2f2f2;
   }
 </style>
