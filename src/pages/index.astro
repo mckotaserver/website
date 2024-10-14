@@ -1,13 +1,15 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import grassBlock from "../assets/grass_block.svg";
 import logo from "../assets/logo.svg";
 ---
 
 <Layout>
   <header>
     <img src={logo.src} class="logo" />
-    <div class="search-bar" />
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass" />
+      <p class="search-placeholder">検索</p>
+    </div>
   </header>
 </Layout>
 
@@ -20,9 +22,25 @@ import logo from "../assets/logo.svg";
   }
 
   .search-bar {
-    inline-size: 24rem;
-    block-size: 2em;
+    display: flex;
+    align-items: center;
+    inline-size: 24em;
+    block-size: 2.32em;
+    margin-inline-start: 1em;
     margin-block-end: .4rem;
+    padding-inline-start: .8em;
+    border: 1px solid #dadada;
+    border-radius: 999px;
     background-color: #f2f2f2;
+  }
+
+  .search > i {
+    transform: translateY(.1em);
+  }
+
+  .search-placeholder {
+    margin-inline-start: .6em;
+    font-size: 1.4rem;
+    font-weight: bold;
   }
 </style>
