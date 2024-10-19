@@ -10,6 +10,19 @@ import logo from "../assets/logo.svg";
       <i class="fa-solid fa-magnifying-glass" />
       <p class="search-placeholder">検索</p>
     </div>
+    <ul class="menu">
+      <li class="menu-item active">攻略ガイド</li>
+      <li class="menu-item">Dynmap</li>
+      <li class="menu-item">こた鯖に投票</li>
+      <li class="menu-item-icon">
+        <i aria-hidden="true" class="fa-brands fa-discord" />
+        <span class="fa-sr-only">Discord</span>
+      </li>
+      <li class="menu-item-icon">
+        <i aria-hidden="true" class="fa-brands fa-x-twitter" />
+        <span class="fa-sr-only">X</span>
+      </li>
+    </ul>
   </header>
 </Layout>
 
@@ -26,12 +39,13 @@ import logo from "../assets/logo.svg";
     align-items: center;
     inline-size: 24em;
     block-size: 2.32em;
-    margin-inline-start: 1em;
+    margin-inline-start: 2em;
     margin-block-end: .4rem;
     padding-inline-start: .8em;
     border: 1px solid #dadada;
     border-radius: 999px;
     background-color: #f2f2f2;
+    color: #9a9ea3;
   }
 
   .search > i {
@@ -42,5 +56,38 @@ import logo from "../assets/logo.svg";
     margin-inline-start: .6em;
     font-size: 1.4rem;
     font-weight: bold;
+  }
+
+  .menu {
+    display: flex;
+    margin-inline-start: auto;
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+
+  .menu-item {
+    padding-inline: 1em;
+  }
+
+  .menu-item::after {
+    content: '';
+    display: block;
+    block-size: .5rem;
+    margin-block-start: .2rem;
+    border-radius: .3rem .3rem 0 0;
+    transform: translateY(.4rem);
+  }
+
+  .menu-item.active {
+    color: #eaa800;
+  }
+
+  .menu-item.active::after {
+    background-color: #ffca42;
+  }
+
+  .menu-item-icon {
+    padding-inline: 1em;
+    font-size: 1.6rem;
   }
 </style>
