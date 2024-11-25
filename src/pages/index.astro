@@ -1,6 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import logo from "../assets/logo.svg";
+import hero from "../assets/hero.svg";
 ---
 
 <Layout>
@@ -24,6 +25,17 @@ import logo from "../assets/logo.svg";
       </li>
     </ul>
   </header>
+  <main>
+    <h1 class="hero-text">
+      <span>まったりあそべる、</span>
+      <span><span class="text-green">Minecraft</span>サーバー。</span>
+    </h1>
+    <a href="#" class="join-button">参加する</a>
+    <img src={hero.src} width={500} class="hero-image" />
+    <section>
+      <h2>こた鯖でのあそび</h2>
+    </section>
+  </main>
 </Layout>
 
 <style>
@@ -89,5 +101,52 @@ import logo from "../assets/logo.svg";
   .menu-item-icon {
     padding-inline: 1em;
     font-size: 1.6rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 1em;
+    margin-block-start: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  .hero-text > span:last-child {
+    margin-inline-start: .5em;
+  }
+
+  .text-green {
+    color: #7ead24;
+  }
+
+  .join-button {
+    display: block;
+    min-inline-size: 10em;
+    margin-block-start: 2em;
+    padding: .5em 1em;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    border-radius: 999px;
+    background-color: #ffca42;
+  }
+
+  .hero-image {
+    margin-block-start: 2em;
+  }
+
+  section > h2 {
+    margin-block-start: 4em;
+    font-size: 2.4rem;
+    font-weight: 900;
   }
 </style>
