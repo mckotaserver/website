@@ -32,8 +32,19 @@ import hero from "../assets/hero.svg";
     </h1>
     <a href="#" class="join-button">参加する</a>
     <img src={hero.src} width={500} class="hero-image" />
-    <section>
+    <section class="asobi-section">
       <h2>こた鯖でのあそび</h2>
+      <div class="asobi-list">
+        <div>
+          <div class="asobi-box">
+            <i class="asobi-icon fa-solid fa-signs-post"></i>
+          </div>
+          <h4 class="asobi-title">観光</h4>
+        </div>
+        <div class="asobi-box" />
+        <div class="asobi-box" />
+        <div class="asobi-box" />
+      </div>
     </section>
   </main>
 </Layout>
@@ -148,5 +159,34 @@ import hero from "../assets/hero.svg";
     margin-block-start: 4em;
     font-size: 2.4rem;
     font-weight: 900;
+  }
+
+  .asobi-list {
+    display: flex;
+    padding-block: 64px;
+  }
+
+  .asobi-box {
+    display: grid;
+    place-content: center;
+    inline-size: 240px;
+    block-size: 240px;
+    margin-inline: auto;
+    border-radius: 64px;
+  }
+
+  .asobi-icon {
+    /* color: #6d5415; */
+    color: #ffb200;
+    font-size: 10rem;
+  }
+
+  .asobi-box:nth-of-type(1) {
+    /* background-color: #ffca42; */
+    background-color: #fff2ce;
+  }
+
+  .asobi-section {
+    text-align: center;
   }
 </style>
