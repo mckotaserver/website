@@ -1,4 +1,5 @@
 ---
+import Feature from "@components/Feature.astro";
 import Layout from "@layouts/Layout.astro";
 import logo from "../assets/logo.svg";
 import hero from "../assets/hero.svg";
@@ -35,15 +36,11 @@ import hero from "../assets/hero.svg";
     <section class="asobi-section">
       <h2>こた鯖でのあそび</h2>
       <div class="asobi-list">
-        <div>
-          <div class="asobi-box">
-            <i class="asobi-icon fa-solid fa-signs-post"></i>
-          </div>
-          <h4 class="asobi-title">観光</h4>
-        </div>
-        <div class="asobi-box" />
-        <div class="asobi-box" />
-        <div class="asobi-box" />
+        <Feature title="観光する" iconName="signs-post">
+        </Feature>
+        <Feature title="建築する" iconName="hammer" />
+        <Feature title="ミニゲームであそぶ" iconName="gamepad" />
+        <Feature title="イベントに参加する" />
       </div>
     </section>
   </main>
@@ -162,28 +159,11 @@ import hero from "../assets/hero.svg";
   }
 
   .asobi-list {
-    display: flex;
-    padding-block: 64px;
-  }
-
-  .asobi-box {
     display: grid;
-    place-content: center;
-    inline-size: 240px;
-    block-size: 240px;
-    margin-inline: auto;
-    border-radius: 64px;
-  }
-
-  .asobi-icon {
-    /* color: #6d5415; */
-    color: #ffb200;
-    font-size: 10rem;
-  }
-
-  .asobi-box:nth-of-type(1) {
-    /* background-color: #ffca42; */
-    background-color: #fff2ce;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4em;
+    inline-size: 96rem;
+    padding-block: 64px;
   }
 
   .asobi-section {

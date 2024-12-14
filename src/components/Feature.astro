@@ -1,0 +1,30 @@
+---
+const { title, iconName } = Astro.props
+---
+
+<div>
+  <div class="feature-box">
+    <i class={`feature-icon fa-solid fa-${iconName}`} />
+  </div>
+  <h4 class="feature-title">{title}</h4>
+  <slot name="description" />
+</div>
+
+<style>
+  .feature-box {
+    display: grid;
+    place-content: center;
+    block-size: 16rem;
+  }
+
+  .feature-icon {
+    /* color: #6d5415; */
+    color: #ffb200;
+    font-size: 12rem;
+  }
+
+  .feature-title {
+    font-size: 2.4rem;
+    font-weight: 900;
+  }
+</style>
