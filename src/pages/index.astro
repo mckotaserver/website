@@ -1,10 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo.svg";
 ---
 
 <Layout>
-	<main>
-		<h1>KotaServer</h1>
-		<p>もふもふワールド</p>
-	</main>
+  <header>
+    <img src={logo.src} alt="KotaServer" />
+  </header>
 </Layout>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    padding-block: 1em;
+    box-shadow: 0 3px 56px rgba(0, 0, 0, 0.06);
+  }
+</style>
