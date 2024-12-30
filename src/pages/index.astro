@@ -7,6 +7,11 @@ import logo from "../assets/logo.svg";
   <header>
     <img src={logo.src} alt="KotaServer" />
   </header>
+  <main>
+    <h1 class="hero-text">
+      <span>まったりあそべる、</span><span><span class="text-green">Minecraft</span>サーバー。</span>
+    </h1>
+  </main>
 </Layout>
 
 <style>
@@ -15,5 +20,31 @@ import logo from "../assets/logo.svg";
     justify-content: center;
     padding-block: 1em;
     box-shadow: 0 3px 56px rgba(0, 0, 0, 0.06);
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 1em;
+    margin-block-start: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  .hero-text > span:last-child {
+    margin-inline-start: .5em;
+  }
+
+  .text-green {
+    color: #7ead24;
+  }
+
+  @media screen and (max-width: 430px) {
+    .hero-text {
+      margin-inline-start: .6em;
+      font-size: 2.6rem;
+    }
   }
 </style>
