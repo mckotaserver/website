@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import logo from "../assets/logo.svg";
+import hero from '../assets/hero.svg';
 ---
 
 <Layout>
@@ -11,6 +12,12 @@ import logo from "../assets/logo.svg";
     <h1 class="hero-text">
       <span>まったりあそべる、</span><span><span class="text-green">Minecraft</span>サーバー。</span>
     </h1>
+    <a
+      href="https://minecraft.jp/servers/5518006c4ddda1074e0041a7"
+      class="join-button"
+    >
+      参加する
+    </a>
   </main>
 </Layout>
 
@@ -20,6 +27,12 @@ import logo from "../assets/logo.svg";
     justify-content: center;
     padding-block: 1em;
     box-shadow: 0 3px 56px rgba(0, 0, 0, 0.06);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero-text {
@@ -39,6 +52,25 @@ import logo from "../assets/logo.svg";
 
   .text-green {
     color: #7ead24;
+  }
+
+  .join-button {
+    min-inline-size: 10em;
+    margin-block-start: 2em;
+    padding: .5em 1em;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    border-radius: 999px;
+    background-color: #ffca42;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  .join-button:hover {
+    opacity: .75;
+    transform: scale(1.05);
   }
 
   @media screen and (max-width: 430px) {
