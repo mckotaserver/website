@@ -18,6 +18,9 @@ import hero from '../assets/hero.svg';
     >
       参加する
     </a>
+    <div class="hero-image">
+      <img src={hero.src} width={500} />
+    </div>
   </main>
 </Layout>
 
@@ -71,6 +74,17 @@ import hero from '../assets/hero.svg';
   .join-button:hover {
     opacity: .75;
     transform: scale(1.05);
+  }
+
+  .hero-image {
+    inline-size: 100%;
+    margin-block-start: 2em;
+    overflow-x: hidden;
+  }
+
+  .hero-image > img {
+    display: block;
+    margin-inline: auto;
   }
 
   @media screen and (max-width: 430px) {
