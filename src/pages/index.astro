@@ -1,10 +1,149 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import logo from "../assets/logo.svg";
+import hero from '../assets/hero.svg';
 ---
 
 <Layout>
-	<main>
-		<h1>KotaServer</h1>
-		<p>もふもふワールド</p>
-	</main>
+  <header>
+    <img src={logo.src} alt="KotaServer" />
+  </header>
+  <main>
+    <h1 class="hero-text">
+      <span>まったりあそべる、</span><span><span class="text-green">Minecraft</span>サーバー。</span>
+    </h1>
+    <a
+      href="https://minecraft.jp/servers/5518006c4ddda1074e0041a7"
+      class="join-button"
+    >
+      参加する
+    </a>
+    <div class="hero-image">
+      <img src={hero.src} width={500} />
+    </div>
+    <section class="wip-message">
+      <h4>ウェブサイト鋭意製作中！</h4>
+      <p>コンテンツ追加をお楽しみに</p>
+    <section>
+  </main>
 </Layout>
+
+<style>
+  header {
+    display: flex;
+    justify-content: center;
+    padding-block: 1em;
+    box-shadow: 0 3px 56px rgba(0, 0, 0, 0.06);
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    margin-inline-start: 1em;
+    margin-block-start: 10rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.5;
+  }
+
+  .hero-text > span:last-child {
+    margin-inline-start: .5em;
+  }
+
+  .text-green {
+    color: #7ead24;
+  }
+
+  .join-button {
+    min-inline-size: 10em;
+    margin-block-start: 2em;
+    padding: .5em 1em;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    border-radius: 999px;
+    background-color: #ffca42;
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  .join-button:hover {
+    opacity: .75;
+    transform: scale(1.05);
+  }
+
+  .hero-image {
+    inline-size: 100%;
+    margin-block-start: 2em;
+    overflow-x: hidden;
+  }
+
+  .hero-image > img {
+    display: block;
+    margin-inline: auto;
+  }
+
+  .wip-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    margin-inline: 1em;
+    margin-block: 10rem;
+    padding: 5em;
+    font-weight: 800;
+    border: 5px solid #ffca42;
+    box-shadow: 1rem 1rem 0 #ffca42;
+  }
+
+  .wip-message > h4 {
+    font-size: 2.4rem;
+  }
+
+  .wip-message > p {
+    color: #64748b;
+  }
+
+  @media screen and (max-width: 500px) {
+    .wip-message {
+      padding: 3em;
+    }
+  }
+
+  @media screen and (max-width: 430px) {
+    .hero-text {
+      margin-inline-start: .6em;
+      font-size: 2.6rem;
+    }
+
+    .wip-message {
+      padding: 2em;
+    }
+
+    .wip-message > h4 {
+      font-size: 2rem;
+    }
+
+    .wip-message > p {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .wip-message > h4 {
+      font-size: 1.6rem;
+    }
+
+    .wip-message > p {
+      font-size: 1.2rem;
+    }
+  }
+</style>
