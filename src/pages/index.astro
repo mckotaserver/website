@@ -21,6 +21,10 @@ import hero from '../assets/hero.svg';
     <div class="hero-image">
       <img src={hero.src} width={500} />
     </div>
+    <section class="wip-message">
+      <h4>ウェブサイト鋭意製作中！</h4>
+      <p>コンテンツ追加をお楽しみに</p>
+    <section>
   </main>
 </Layout>
 
@@ -87,10 +91,59 @@ import hero from '../assets/hero.svg';
     margin-inline: auto;
   }
 
+  .wip-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    margin-inline: 1em;
+    margin-block: 10rem;
+    padding: 5em;
+    font-weight: 800;
+    border: 5px solid #ffca42;
+    box-shadow: 1rem 1rem 0 #ffca42;
+  }
+
+  .wip-message > h4 {
+    font-size: 2.4rem;
+  }
+
+  .wip-message > p {
+    color: #64748b;
+  }
+
+  @media screen and (max-width: 500px) {
+    .wip-message {
+      padding: 3em;
+    }
+  }
+
   @media screen and (max-width: 430px) {
     .hero-text {
       margin-inline-start: .6em;
       font-size: 2.6rem;
+    }
+
+    .wip-message {
+      padding: 2em;
+    }
+
+    .wip-message > h4 {
+      font-size: 2rem;
+    }
+
+    .wip-message > p {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .wip-message > h4 {
+      font-size: 1.6rem;
+    }
+
+    .wip-message > p {
+      font-size: 1.2rem;
     }
   }
 </style>
