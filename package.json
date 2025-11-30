@@ -14,8 +14,5 @@
     "astro": "^5.16.0",
     "destyle.css": "^4.0.1",
     "typescript": "^5.9.3"
-  },
-  "volta": {
-    "node": "20.12.2"
   }
 }
