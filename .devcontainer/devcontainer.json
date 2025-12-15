@@ -1,0 +1,21 @@
+{
+	"name": "KotaServer Website",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"mounts": [
+		"source=${localWorkspaceFolderBasename}-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+		"source=${localWorkspaceFolderBasename}-pnpm_store,target=${containerWorkspaceFolder}/.pnpm-store,type=volume"
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "20"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode"
+			]
+		}
+	},
+	"postCreateCommand": "sudo chown -R vscode node_modules .pnpm-store"
+}
