@@ -1,5 +1,3 @@
-# Copilot instructions
-
 ## Project overview
 - Astro 5 static site for KotaServer (Minecraft community) with a single page in `src/pages/index.astro` using `src/layouts/Layout.astro`.
 - Assets are imported as ESM from `src/assets/` (e.g., `logo.svg`, `hero.svg`) and used via `asset.src` in `.astro` templates.
