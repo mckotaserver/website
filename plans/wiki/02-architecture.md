@@ -4,16 +4,16 @@
 
 ### 概要
 
-| レイヤー | 技術 |
-|----------|------|
-| 公開Wiki | Astro（SSG） |
-| 管理画面 | HonoX（Islands Architecture） |
-| ORM | Drizzle ORM |
-| データベース | Cloudflare D1 |
-| セッション管理 | Cloudflare KV |
-| 画像ストレージ | Cloudflare R2 |
-| ホスティング | Cloudflare Pages |
-| ランタイム | Cloudflare Workers |
+| レイヤー       | 技術                          |
+| -------------- | ----------------------------- |
+| 公開Wiki       | Astro（SSG）                  |
+| 管理画面       | HonoX（Islands Architecture） |
+| ORM            | Drizzle ORM                   |
+| データベース   | Cloudflare D1                 |
+| セッション管理 | Cloudflare KV                 |
+| 画像ストレージ | Cloudflare R2                 |
+| ホスティング   | Cloudflare Pages              |
+| ランタイム     | Cloudflare Workers            |
 
 ### 詳細
 
@@ -241,63 +241,63 @@ erDiagram
 
 #### users
 
-| カラム | 型 | 制約 | 説明 |
-|--------|------|------|------|
-| id | TEXT | PK | UUID |
-| username | TEXT | UNIQUE, NOT NULL | ユーザー名 |
-| password_hash | TEXT | NOT NULL | bcryptハッシュ |
-| role | TEXT | NOT NULL | admin / moderator / editor |
-| created_at | TEXT | NOT NULL | ISO 8601形式 |
-| updated_at | TEXT | NOT NULL | ISO 8601形式 |
+| カラム        | 型   | 制約             | 説明                       |
+| ------------- | ---- | ---------------- | -------------------------- |
+| id            | TEXT | PK               | UUID                       |
+| username      | TEXT | UNIQUE, NOT NULL | ユーザー名                 |
+| password_hash | TEXT | NOT NULL         | bcryptハッシュ             |
+| role          | TEXT | NOT NULL         | admin / moderator / editor |
+| created_at    | TEXT | NOT NULL         | ISO 8601形式               |
+| updated_at    | TEXT | NOT NULL         | ISO 8601形式               |
 
 #### categories
 
-| カラム | 型 | 制約 | 説明 |
-|--------|------|------|------|
-| id | TEXT | PK | UUID |
-| slug | TEXT | UNIQUE, NOT NULL | URLスラッグ |
-| name | TEXT | NOT NULL | カテゴリ名 |
+| カラム     | 型      | 制約                | 説明                               |
+| ---------- | ------- | ------------------- | ---------------------------------- |
+| id         | TEXT    | PK                  | UUID                               |
+| slug       | TEXT    | UNIQUE, NOT NULL    | URLスラッグ                        |
+| name       | TEXT    | NOT NULL            | カテゴリ名                         |
 | sort_order | INTEGER | NOT NULL, DEFAULT 0 | 表示順（サイドメニューでの並び順） |
-| created_at | TEXT | NOT NULL | ISO 8601形式 |
-| updated_at | TEXT | NOT NULL | ISO 8601形式 |
+| created_at | TEXT    | NOT NULL            | ISO 8601形式                       |
+| updated_at | TEXT    | NOT NULL            | ISO 8601形式                       |
 
 #### articles
 
-| カラム | 型 | 制約 | 説明 |
-|--------|------|------|------|
-| id | TEXT | PK | UUID |
-| slug | TEXT | UNIQUE, NOT NULL | URLスラッグ |
-| title | TEXT | NOT NULL | タイトル |
-| content | TEXT | NOT NULL | Markdown本文 |
-| category_id | TEXT | FK → categories.id | カテゴリ |
-| status | TEXT | NOT NULL | draft / published |
-| author_id | TEXT | FK → users.id | 作成者 |
-| published_at | TEXT | NULL | 公開日時 |
-| created_at | TEXT | NOT NULL | ISO 8601形式 |
-| updated_at | TEXT | NOT NULL | ISO 8601形式 |
+| カラム       | 型   | 制約               | 説明              |
+| ------------ | ---- | ------------------ | ----------------- |
+| id           | TEXT | PK                 | UUID              |
+| slug         | TEXT | UNIQUE, NOT NULL   | URLスラッグ       |
+| title        | TEXT | NOT NULL           | タイトル          |
+| content      | TEXT | NOT NULL           | Markdown本文      |
+| category_id  | TEXT | FK → categories.id | カテゴリ          |
+| status       | TEXT | NOT NULL           | draft / published |
+| author_id    | TEXT | FK → users.id      | 作成者            |
+| published_at | TEXT | NULL               | 公開日時          |
+| created_at   | TEXT | NOT NULL           | ISO 8601形式      |
+| updated_at   | TEXT | NOT NULL           | ISO 8601形式      |
 
 #### article_revisions
 
-| カラム | 型 | 制約 | 説明 |
-|--------|------|------|------|
-| id | TEXT | PK | UUID |
-| article_id | TEXT | FK → articles.id | 記事ID |
-| title | TEXT | NOT NULL | タイトル |
-| content | TEXT | NOT NULL | Markdown本文 |
-| editor_id | TEXT | FK → users.id | 編集者 |
-| created_at | TEXT | NOT NULL | ISO 8601形式 |
+| カラム     | 型   | 制約             | 説明         |
+| ---------- | ---- | ---------------- | ------------ |
+| id         | TEXT | PK               | UUID         |
+| article_id | TEXT | FK → articles.id | 記事ID       |
+| title      | TEXT | NOT NULL         | タイトル     |
+| content    | TEXT | NOT NULL         | Markdown本文 |
+| editor_id  | TEXT | FK → users.id    | 編集者       |
+| created_at | TEXT | NOT NULL         | ISO 8601形式 |
 
 #### images
 
-| カラム | 型 | 制約 | 説明 |
-|--------|------|------|------|
-| id | TEXT | PK | UUID |
-| filename | TEXT | NOT NULL | 元ファイル名 |
-| r2_key | TEXT | NOT NULL | R2オブジェクトキー |
-| mime_type | TEXT | NOT NULL | MIMEタイプ |
-| size | INTEGER | NOT NULL | ファイルサイズ（バイト） |
-| uploader_id | TEXT | FK → users.id | アップロード者 |
-| created_at | TEXT | NOT NULL | ISO 8601形式 |
+| カラム      | 型      | 制約          | 説明                     |
+| ----------- | ------- | ------------- | ------------------------ |
+| id          | TEXT    | PK            | UUID                     |
+| filename    | TEXT    | NOT NULL      | 元ファイル名             |
+| r2_key      | TEXT    | NOT NULL      | R2オブジェクトキー       |
+| mime_type   | TEXT    | NOT NULL      | MIMEタイプ               |
+| size        | INTEGER | NOT NULL      | ファイルサイズ（バイト） |
+| uploader_id | TEXT    | FK → users.id | アップロード者           |
+| created_at  | TEXT    | NOT NULL      | ISO 8601形式             |
 
 ---
 
@@ -309,43 +309,43 @@ APIレイヤーは設けず、共有パッケージ（database）経由でD1に�
 
 #### 記事
 
-| 関数 | 説明 |
-|------|------|
-| `getPublishedArticles()` | 公開記事一覧を取得 |
-| `getArticleBySlug(slug)` | スラッグで記事を取得 |
-| `getAllArticles()` | 全記事一覧を取得（下書き含む） |
-| `getArticleById(id)` | IDで記事を取得 |
-| `createArticle(data)` | 記事を作成 |
-| `updateArticle(id, data)` | 記事を更新 |
-| `deleteArticle(id)` | 記事を削除 |
-| `publishArticle(id)` | 記事を公開 |
-| `unpublishArticle(id)` | 記事を非公開 |
-| `getArticleRevisions(articleId)` | 編集履歴を取得 |
+| 関数                             | 説明                           |
+| -------------------------------- | ------------------------------ |
+| `getPublishedArticles()`         | 公開記事一覧を取得             |
+| `getArticleBySlug(slug)`         | スラッグで記事を取得           |
+| `getAllArticles()`               | 全記事一覧を取得（下書き含む） |
+| `getArticleById(id)`             | IDで記事を取得                 |
+| `createArticle(data)`            | 記事を作成                     |
+| `updateArticle(id, data)`        | 記事を更新                     |
+| `deleteArticle(id)`              | 記事を削除                     |
+| `publishArticle(id)`             | 記事を公開                     |
+| `unpublishArticle(id)`           | 記事を非公開                   |
+| `getArticleRevisions(articleId)` | 編集履歴を取得                 |
 
 #### カテゴリ
 
-| 関数 | 説明 |
-|------|------|
-| `getCategories()` | カテゴリ一覧を取得 |
-| `createCategory(data)` | カテゴリを作成 |
-| `updateCategory(id, data)` | カテゴリを更新 |
-| `deleteCategory(id)` | カテゴリを削除 |
+| 関数                       | 説明               |
+| -------------------------- | ------------------ |
+| `getCategories()`          | カテゴリ一覧を取得 |
+| `createCategory(data)`     | カテゴリを作成     |
+| `updateCategory(id, data)` | カテゴリを更新     |
+| `deleteCategory(id)`       | カテゴリを削除     |
 
 #### ユーザー
 
-| 関数 | 説明 |
-|------|------|
+| 関数                          | 説明                       |
+| ----------------------------- | -------------------------- |
 | `getUserByUsername(username)` | ユーザー名でユーザーを取得 |
-| `getUserById(id)` | IDでユーザーを取得 |
-| `getUsers()` | ユーザー一覧を取得 |
-| `createUser(data)` | ユーザーを作成 |
-| `updateUserRole(id, role)` | ユーザー権限を変更 |
-| `deleteUser(id)` | ユーザーを削除 |
+| `getUserById(id)`             | IDでユーザーを取得         |
+| `getUsers()`                  | ユーザー一覧を取得         |
+| `createUser(data)`            | ユーザーを作成             |
+| `updateUserRole(id, role)`    | ユーザー権限を変更         |
+| `deleteUser(id)`              | ユーザーを削除             |
 
 #### 画像
 
-| 関数 | 説明 |
-|------|------|
+| 関数                      | 説明                 |
+| ------------------------- | -------------------- |
 | `saveImageMetadata(data)` | 画像メタデータを保存 |
 | `deleteImageMetadata(id)` | 画像メタデータを削除 |
 

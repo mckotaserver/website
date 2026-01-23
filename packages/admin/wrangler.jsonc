@@ -3,12 +3,10 @@
   "name": "admin",
   "main": "./dist/index.js",
   "compatibility_date": "2026-01-23",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+  },
   // "vars": {
   //   "MY_VAR": "my-variable"
   // },

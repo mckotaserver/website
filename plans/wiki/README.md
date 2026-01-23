@@ -4,10 +4,10 @@ KotaServerウェブサイトにWiki機能を追加するための計画ドキュ
 
 ## ドキュメント一覧
 
-| ファイル | 内容 |
-|----------|------|
-| [01-requirements.md](./01-requirements.md) | 要件定義 - 何を作るか |
-| [02-architecture.md](./02-architecture.md) | 技術設計 - どう作るか |
+| ファイル                                       | 内容                      |
+| ---------------------------------------------- | ------------------------- |
+| [01-requirements.md](./01-requirements.md)     | 要件定義 - 何を作るか     |
+| [02-architecture.md](./02-architecture.md)     | 技術設計 - どう作るか     |
 | [03-implementation.md](./03-implementation.md) | 実装計画 - どの順で作るか |
 
 ## 概要
