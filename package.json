@@ -1,0 +1,11 @@
+{
+  "name": "kotaserver-monorepo",
+  "private": true,
+  "scripts": {
+    "dev:web": "pnpm --filter ./packages/website dev",
+    "start:web": "pnpm --filter ./packages/website start",
+    "build:web": "pnpm --filter ./packages/website build",
+    "preview:web": "pnpm --filter ./packages/website preview",
+    "astro:web": "pnpm --filter ./packages/website astro"
+  }
+}
