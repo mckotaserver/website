@@ -11,7 +11,7 @@
 - [ ] モノレポ構成のセットアップ
   - [x] pnpm-workspace.yaml の更新
   - [x] packages/website への既存コード移動
-  - [ ] packages/admin の作成（HonoX）
+  - [x] packages/admin の作成（HonoX）
   - [ ] packages/database の作成
   - [ ] 共通設定（TypeScript, ESLint等）
 

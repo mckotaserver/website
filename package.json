@@ -6,6 +6,10 @@
     "start:web": "pnpm --filter ./packages/website start",
     "build:web": "pnpm --filter ./packages/website build",
     "preview:web": "pnpm --filter ./packages/website preview",
-    "astro:web": "pnpm --filter ./packages/website astro"
+    "astro:web": "pnpm --filter ./packages/website astro",
+    "dev:admin": "pnpm --filter ./packages/admin dev",
+    "build:admin": "pnpm --filter ./packages/admin build",
+    "preview:admin": "pnpm --filter ./packages/admin preview",
+    "deploy:admin": "pnpm --filter ./packages/admin deploy"
   }
 }
