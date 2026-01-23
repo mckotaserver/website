@@ -1,3 +1,3 @@
 import { createClient } from 'honox/client'
 
-createClient()
+void createClient()
