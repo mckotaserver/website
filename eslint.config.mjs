@@ -135,6 +135,9 @@ export default [
         tsconfigRootDir,
       },
     },
+    plugins: {
+      "@typescript-eslint": tsPlugin,
+    },
     rules: {
       ...tsPlugin.configs["recommended-type-checked"].rules,
       "no-undef": "off",
