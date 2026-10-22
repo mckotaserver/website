@@ -23,5 +23,8 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# pnpm store
-.pnpm-store
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
