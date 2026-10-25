@@ -8,7 +8,7 @@ Configure the connected Worker (`website`) in Settings → Build:
 | Setting | Value |
 | --- | --- |
 | Build command | `bash scripts/cloudflare-build.sh` |
-| Deploy command | `$HOME/.local/bin/mise exec -- pnpm exec wrangler deploy` |
+| Deploy command | `MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" $HOME/.local/bin/mise exec -- pnpm exec wrangler deploy` |
 | Root directory | `/` |
 | Build variable | `SKIP_DEPENDENCY_INSTALL=1` |
 
@@ -18,8 +18,11 @@ tools with `mise install --locked`, then installs dependencies with
 through `mise exec`, so they use the locked tools. The installer currently obtains
 the latest mise itself; `mise.lock` locks Node.js and pnpm, not mise.
 
+Both commands disable global and system mise configuration so tools provided by
+the build image do not become additional lockfile requirements.
+
 The connected Worker name must match `name` in `wrangler.jsonc`. Workers Builds
 also needs a valid deployment API token configured in the dashboard.
 
 For non-production branch deployments, if enabled, use
-`$HOME/.local/bin/mise exec -- pnpm exec wrangler versions upload`.
+`MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" $HOME/.local/bin/mise exec -- pnpm exec wrangler versions upload`.

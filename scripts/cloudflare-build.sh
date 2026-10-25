@@ -3,6 +3,10 @@ set -euo pipefail
 
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
+# Workers Builds configures unrelated tools globally; only use this project's tools.
+export MISE_CONFIG_DIR="$PWD/scripts"
+export MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml"
+
 installer="$(mktemp)"
 trap 'rm -f "$installer"' EXIT
 curl --fail --silent --show-error --location https://mise.run --output "$installer"
