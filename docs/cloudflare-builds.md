@@ -35,5 +35,8 @@ does not prevent mise from reading that file.
 The connected Worker name must match `name` in `wrangler.jsonc`. Workers Builds
 also needs a valid deployment API token configured in the dashboard.
 
-For non-production branch deployments, if enabled, use
-`MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" MISE_IGNORED_CONFIG_PATHS="$HOME/.tool-versions" $HOME/.local/bin/mise exec -- pnpm exec wrangler versions upload`.
+For non-production branch deployments with Worker Previews enabled, set the
+Preview command in the Previews Base tab to
+`MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" MISE_IGNORED_CONFIG_PATHS="$HOME/.tool-versions" $HOME/.local/bin/mise exec -- pnpm exec wrangler preview`.
+The production Deploy command remains `wrangler deploy`. Using it as the Preview
+command fails the Worker name check before uploading the preview.
