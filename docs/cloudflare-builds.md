@@ -12,6 +12,14 @@ Configure the connected Worker (`website`) in Settings → Build:
 | Root directory | `/` |
 | Build variable | `SKIP_DEPENDENCY_INSTALL=1` |
 
+Set the build variable in both the Production and Previews Base tabs. Preview
+builds do not inherit the production build variables. Without it, the build
+image runs its own dependency installation before the build script can select
+the locked pnpm version.
+
+After changing build settings, push a new commit to start a fresh build. Retrying
+an older build can reuse its previous configuration, including build variables.
+
 The script installs mise, trusts the checked-out project configuration, installs
 tools with `mise install --locked`, then installs dependencies with
 `pnpm install --frozen-lockfile` and builds the site. Both build and deploy run
