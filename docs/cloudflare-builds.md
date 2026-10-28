@@ -12,6 +12,18 @@ Configure the connected Worker (`website`) in Settings → Build:
 | Root directory | `/` |
 | Build variable | `SKIP_DEPENDENCY_INSTALL=1` |
 
+Set the build variable in both the Production and Previews Base tabs. Preview
+builds do not inherit the production build variables. Without it, the build
+image runs its own dependency installation before the build script can select
+the locked pnpm version.
+
+When changing Previews Base settings, use the Save menu's Apply to existing
+Previews option to update already-created branch previews too.
+
+`package.json` also pins pnpm to the version in `mise.lock`, so an automatic
+dependency install uses a compatible version even if the build variable is not
+applied. Keep these versions in sync when updating pnpm.
+
 The script installs mise, trusts the checked-out project configuration, installs
 tools with `mise install --locked`, then installs dependencies with
 `pnpm install --frozen-lockfile` and builds the site. Both build and deploy run
@@ -26,5 +38,8 @@ does not prevent mise from reading that file.
 The connected Worker name must match `name` in `wrangler.jsonc`. Workers Builds
 also needs a valid deployment API token configured in the dashboard.
 
-For non-production branch deployments, if enabled, use
-`MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" MISE_IGNORED_CONFIG_PATHS="$HOME/.tool-versions" $HOME/.local/bin/mise exec -- pnpm exec wrangler versions upload`.
+For non-production branch deployments with Worker Previews enabled, set the
+Preview command in the Previews Base tab to
+`MISE_CONFIG_DIR="$PWD/scripts" MISE_SYSTEM_CONFIG_FILE="$PWD/scripts/mise-empty.toml" MISE_IGNORED_CONFIG_PATHS="$HOME/.tool-versions" $HOME/.local/bin/mise exec -- pnpm exec wrangler preview`.
+The production Deploy command remains `wrangler deploy`. Using it as the Preview
+command fails the Worker name check before uploading the preview.
