@@ -17,6 +17,9 @@ builds do not inherit the production build variables. Without it, the build
 image runs its own dependency installation before the build script can select
 the locked pnpm version.
 
+When changing Previews Base settings, use the Save menu's Apply to existing
+Previews option to update already-created branch previews too.
+
 `package.json` also pins pnpm to the version in `mise.lock`, so an automatic
 dependency install uses a compatible version even if the build variable is not
 applied. Keep these versions in sync when updating pnpm.
