@@ -17,8 +17,9 @@ builds do not inherit the production build variables. Without it, the build
 image runs its own dependency installation before the build script can select
 the locked pnpm version.
 
-After changing build settings, push a new commit to start a fresh build. Retrying
-an older build can reuse its previous configuration, including build variables.
+`package.json` also pins pnpm to the version in `mise.lock`, so an automatic
+dependency install uses a compatible version even if the build variable is not
+applied. Keep these versions in sync when updating pnpm.
 
 The script installs mise, trusts the checked-out project configuration, installs
 tools with `mise install --locked`, then installs dependencies with
