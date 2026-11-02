@@ -21,7 +21,7 @@
 		"destyle.css": "^4.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "^26.6.5",
+		"@types/node": "^26.6.6",
 		"wrangler": "^4.152.0"
 	}
 }
